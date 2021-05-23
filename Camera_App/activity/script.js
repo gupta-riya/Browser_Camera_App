@@ -5,6 +5,9 @@ let videoElem = document.querySelector("#video-elem");
 let timingElem = document.querySelector(".timing");
 let allFilters = document.querySelectorAll(".filter");
 let uiFilter = document.querySelector(".ui-filter");
+let zoomOutElem = document.getElementById("minus-container");
+let zoomInElem = document.getElementById("plus-container");
+
 let filterColor = "";
 let constraints = {
     video: true,

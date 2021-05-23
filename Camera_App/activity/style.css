@@ -4,6 +4,7 @@
 
 body{
     margin: 0px;
+    overflow: hidden;
 }
 
 .video-container{
@@ -15,6 +16,7 @@ body{
 .video{
     height: 100%;
     width: 100%;
+    /* transform: scale(1.25); -> to zoom out or zoom in */
 }
 
 .btn-parent{
@@ -129,6 +131,7 @@ body{
     font-size: 2rem;
     font-family: sans-serif;
     font-weight: 600;
+    box-shadow: tomato;
     /* display: none; */
 
 }
@@ -136,3 +139,27 @@ body{
 .timing-active{
     display: block;
 }
+
+.zoom{
+
+    height: 4em;
+    width: 2rem;
+    background-color: #444;
+    position: fixed;
+    z-index: 2;
+    right: 7vw;
+    top: 9vh;
+    text-align: center;
+
+}
+
+.zoom-icon{
+    height:50%;
+    width:100%;
+    color: white;
+    border-bottom: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
