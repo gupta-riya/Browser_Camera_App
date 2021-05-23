@@ -63,6 +63,10 @@ body{
     animation: scaleUp 1s ease-in infinite;
 }
 
+.capture-animation{
+    animation: scaleUp 0.5s ease-in;
+}
+
 @keyframes scaleUp{
 
     /* different time intervals */
@@ -81,4 +85,38 @@ body{
     /* 100%{
         transform: scale(1.25);
     } */
+}
+
+.filter-container{
+    height: 60vh;
+    width: 6vw;
+    position: fixed;
+    top: 20vh;
+    left:5vw;
+
+
+}
+
+.filter{
+    background-image: url("https://picsum.photos/seed/picsum/200/300");
+    height: 20%;
+    background-size: cover;
+    /* mix bg color with the image */
+    background-blend-mode: color-burn;
+}
+
+.timing{
+    color:white;
+    position: fixed;
+    bottom: 11vh;
+    left: 5vw;
+    font-size: 2rem;
+    font-family: sans-serif;
+    font-weight: 600;
+    /* display: none; */
+
+}
+
+.timing-active{
+    display: block;
 }
