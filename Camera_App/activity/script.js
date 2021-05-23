@@ -53,14 +53,16 @@ videoRecorder.addEventListener("click",function(){
     {
         // start recording
         mediaRecorder.start();
-        videoRecorder.innerHTML = "Recording...";
+        // videoRecorder.innerHTML = "Recording...";
+        videoRecorder.classList.add("record-animation");
         recordState = true;
     }
     else
     {
         //stop recording
         mediaRecorder.stop();
-        videoRecorder.innerHTML = "Record";
+        // videoRecorder.innerHTML = "Record";
+        videoRecorder.classList.remove("record-animation");
         recordState = false;
     }
 })
