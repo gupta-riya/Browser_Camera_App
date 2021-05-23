@@ -25,7 +25,7 @@ body{
     position: fixed;
     top: 34vh;
     border-radius: 50%;
-    z-index: 2;
+    z-index: 6;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -93,6 +93,7 @@ body{
     position: fixed;
     top: 20vh;
     left:5vw;
+    z-index: 6;
 
 
 }
@@ -104,6 +105,21 @@ body{
     /* mix bg color with the image */
     background-blend-mode: color-burn;
 }
+
+.ui-filter{
+    height:100vh;
+    width:100vw;
+    /* background-color: rgb(211,211,211,0.45); */
+    position: fixed;
+    z-index: 4;
+    display:none;
+    opacity: 0.7;
+}
+
+.ui-filter-active{
+    display:block;
+}
+
 
 .timing{
     color:white;
