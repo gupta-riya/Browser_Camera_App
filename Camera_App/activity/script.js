@@ -88,14 +88,31 @@ captureBtn.addEventListener("click",function(){
     let canvas = document.createElement("canvas");
     canvas.width = videoElem.videoWidth;
     canvas.height = videoElem.videoHeight;
+
     let tool = canvas.getContext("2d");
     captureBtn.classList.add("capture-animation");
+
+    // always scale image before drawing 
+    // scale on center using translate function else it will click from 0,0
+    tool.scale(zoomlevel,zoomlevel);
+    // take out center coordinates
+    let x = (canvas.width/zoomlevel - canvas.width)/2;
+    let y = (canvas.height/zoomlevel - canvas.height)/2;
+    
     // draw frame on canvas
-    tool.drawImage(videoElem,0,0);
-    //add filter color
-    tool.fillStyle = filterColor;
-    //this will create a layer on top of image
-    tool.fillRect(0,0,canvas.width,canvas.height);
+    tool.drawImage(videoElem,x,y);
+
+    
+
+    // if only we have a filter color
+    if(filterColor)
+    {
+        //add filter color
+        tool.fillStyle = filterColor;
+        //this will create a layer on top of image
+        tool.fillRect(0,0,canvas.width,canvas.height);
+    }
+    
     // things are drawn above this layer
     // canvas to data URL and download
     let link = canvas.toDataURL();
