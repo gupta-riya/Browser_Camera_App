@@ -7,6 +7,7 @@ let allFilters = document.querySelectorAll(".filter");
 let uiFilter = document.querySelector(".ui-filter");
 let zoomOutElem = document.getElementById("minus-container");
 let zoomInElem = document.getElementById("plus-container");
+let zoomlevel = 1;
 
 let filterColor = "";
 let constraints = {
@@ -153,3 +154,28 @@ for(let i = 0 ; i < allFilters.length; i++)
         }
     })
 }
+
+
+
+// zoom in and out
+zoomInElem.addEventListener("click",function(){
+    zoomlevel += 0.2;
+    if(zoomlevel < 3){
+        videoElem.style.transform = `scale(${zoomlevel})`;
+    }
+    else{
+        zoomlevel = 3;
+    }
+})
+
+zoomOutElem.addEventListener("click",function(){
+    zoomlevel -= 0.2;
+    if(zoomlevel > 1)
+    {
+        videoElem.style.transform = `scale(${zoomlevel})`;
+    }
+    else
+    {
+        zoomlevel = 1;
+    }
+})

@@ -1,165 +1,154 @@
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
-body{
-    margin: 0px;
-    overflow: hidden;
+body {
+  margin: 0px;
+  overflow: hidden;
 }
 
-.video-container{
-    height:100vh;
-    width: 100vw;
-    background-color: black;
+.video-container {
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
 }
 
-.video{
-    height: 100%;
-    width: 100%;
-    /* transform: scale(1.25); -> to zoom out or zoom in */
+.video {
+  height: 100%;
+  width: 100%;
+  /* transform: scale(1.25); -> to zoom out or zoom in */
 }
 
-.btn-parent{
-
-    height: 4.5rem;
-    width: 4.5rem;
-    border: 0.4rem solid white;
-    position: fixed;
-    top: 34vh;
-    border-radius: 50%;
-    z-index: 6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    right: 2vw;
-
+.btn-parent {
+  height: 4.5rem;
+  width: 4.5rem;
+  border: 0.4rem solid white;
+  position: fixed;
+  top: 34vh;
+  border-radius: 50%;
+  z-index: 6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 2vw;
 }
 
-.capture-container{
-
-    top: 50vh;
+.capture-container {
+  top: 50vh;
 }
-.record-btn,.capture-btn{
-   
-    height: 3rem;
-    width: 3rem;
-    /* z-index: 2; */
-    border-radius: 50%;
-    border:none;
-    outline: none;
-    /* right: 6vw; */
-    /* top: 34vh; */
-}
-
-.record-btn{
-    background-color: red;
+.record-btn,
+.capture-btn {
+  height: 3rem;
+  width: 3rem;
+  /* z-index: 2; */
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  /* right: 6vw; */
+  /* top: 34vh; */
 }
 
-.capture-btn{
+.record-btn {
+  background-color: red;
+}
 
- background-color: white;
+.capture-btn {
+  background-color: white;
 }
 
 /* animation */
-.record-animation{
-    animation: scaleUp 1s ease-in infinite;
+.record-animation {
+  animation: scaleUp 1s ease-in infinite;
 }
 
-.capture-animation{
-    animation: scaleUp 0.5s ease-in;
+.capture-animation {
+  animation: scaleUp 0.5s ease-in;
 }
 
-@keyframes scaleUp{
-
-    /* different time intervals */
-    0%{
-        transform: scale(1);
-    }
-    25%{
-        transform: scale(1.125);
-    }
-    50%{
-        transform: scale(1.25);
-    }
-    75%{
-        transform: scale(1.125);
-    }
-    /* 100%{
+@keyframes scaleUp {
+  /* different time intervals */
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.125);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  75% {
+    transform: scale(1.125);
+  }
+  /* 100%{
         transform: scale(1.25);
     } */
 }
 
-.filter-container{
-    height: 60vh;
-    width: 6vw;
-    position: fixed;
-    top: 20vh;
-    left:5vw;
-    z-index: 6;
-
-
+.filter-container {
+  height: 60vh;
+  width: 6vw;
+  position: fixed;
+  top: 20vh;
+  left: 5vw;
+  z-index: 6;
 }
 
-.filter{
-    background-image: url("https://picsum.photos/seed/picsum/200/300");
-    height: 20%;
-    background-size: cover;
-    /* mix bg color with the image */
-    background-blend-mode: color-burn;
+.filter {
+  background-image: url("https://picsum.photos/seed/picsum/200/300");
+  height: 20%;
+  background-size: cover;
+  /* mix bg color with the image */
+  background-blend-mode: color-burn;
 }
 
-.ui-filter{
-    height:100vh;
-    width:100vw;
-    /* background-color: rgb(211,211,211,0.45); */
-    position: fixed;
-    z-index: 4;
-    display:none;
-    opacity: 0.7;
+.ui-filter {
+  height: 100vh;
+  width: 100vw;
+  /* background-color: rgb(211,211,211,0.45); */
+  position: fixed;
+  z-index: 4;
+  display: none;
+  opacity: 0.7;
 }
 
-.ui-filter-active{
-    display:block;
+.ui-filter-active {
+  display: block;
 }
 
-
-.timing{
-    color:white;
-    position: fixed;
-    bottom: 11vh;
-    left: 5vw;
-    font-size: 2rem;
-    font-family: sans-serif;
-    font-weight: 600;
-    box-shadow: tomato;
-    /* display: none; */
-
+.timing {
+  color: white;
+  position: fixed;
+  bottom: 11vh;
+  left: 5vw;
+  font-size: 2rem;
+  font-family: sans-serif;
+  font-weight: 600;
+  box-shadow: tomato;
+  z-index: 6;
+  /* display: none; */
 }
 
-.timing-active{
-    display: block;
+.timing-active {
+  display: block;
 }
 
-.zoom{
-
-    height: 4em;
-    width: 2rem;
-    background-color: #444;
-    position: fixed;
-    z-index: 2;
-    right: 7vw;
-    top: 9vh;
-    text-align: center;
-
+.zoom {
+  height: 4em;
+  width: 2rem;
+  background-color: #444;
+  position: fixed;
+  z-index: 6;
+  right: 7vw;
+  top: 9vh;
+  text-align: center;
 }
 
-.zoom-icon{
-    height:50%;
-    width:100%;
-    color: white;
-    border-bottom: 2px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.zoom-icon {
+  height: 50%;
+  width: 100%;
+  color: white;
+  border-bottom: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
