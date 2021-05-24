@@ -34,14 +34,15 @@ navigator.mediaDevices.getUserMedia(constraints).then(function(mediaStream){
         // convert the data into a blob
         // mime type
         let blob = new Blob(buffer,{type: "video/mp4"});
-        // convert any blob in url
-        const url = window.URL.createObjectURL(blob);
+        // // convert any blob in url
+        // const url = window.URL.createObjectURL(blob);
     
-        let a = document.createElement("a");
-        a.download = "file.mp4";
-        a.href = url;
-        a.click();
-        //clear buffer
+        addMediaToDB(blob,"video");
+        // let a = document.createElement("a");
+        // a.download = "file.mp4";
+        // a.href = url;
+        // a.click();
+        // //clear buffer
         buffer = [];
     
     })
@@ -114,14 +115,17 @@ captureBtn.addEventListener("click",function(){
     }
     
     // things are drawn above this layer
+
     // canvas to data URL and download
     let link = canvas.toDataURL();
-    let anchor = document.createElement("a");
-    anchor.href = link;
-    anchor.download = "frame.png";
-    anchor.click();
-    anchor.remove();
-    canvas.remove();
+    addMediaToDB(link,"img");
+
+    // let anchor = document.createElement("a");
+    // anchor.href = link;
+    // anchor.download = "frame.png";
+    // anchor.click();
+    // anchor.remove();
+    // canvas.remove();
 
     // we need only a single second animation
     setTimeout(function(){
