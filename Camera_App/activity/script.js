@@ -34,16 +34,10 @@ navigator.mediaDevices.getUserMedia(constraints).then(function(mediaStream){
         // convert the data into a blob
         // mime type
         let blob = new Blob(buffer,{type: "video/mp4"});
-        // // convert any blob in url
-        // const url = window.URL.createObjectURL(blob);
-    
-        addMediaToDB(blob,"video");
-        // let a = document.createElement("a");
-        // a.download = "file.mp4";
-        // a.href = url;
-        // a.click();
-        // //clear buffer
+        
         buffer = [];
+        addMediaToGallery(blob,"video");
+        
     
     })
 })
@@ -118,7 +112,7 @@ captureBtn.addEventListener("click",function(){
 
     // canvas to data URL and download
     let link = canvas.toDataURL();
-    addMediaToDB(link,"img");
+    addMediaToGallery(link,"img");
 
     // let anchor = document.createElement("a");
     // anchor.href = link;
