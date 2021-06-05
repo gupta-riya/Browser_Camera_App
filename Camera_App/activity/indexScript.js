@@ -51,6 +51,30 @@ function viewGallery(){
             video.src = URL.createObjectURL(cursor.value.media);
             body.appendChild(vidContainer);
         }
+        else{
+
+            let imgContainer = document.createElement("div");
+            imgContainer.setAttribute('data-mId',cursor.value.mId);
+            imgContainer.classList.add('gallery-img-container');
+            let img = document.createElement('img');
+            img.src = cursor.value.media;
+            imgContainer.appendChild(img);
+            let deleteBtn = document.createElement('button');
+            deleteBtn.classList.add('gallery-delete-button');
+            deleteBtn.innerText = 'Delete';
+            deleteBtn.addEventListener('click',deleteBtnHandler);
+            let downloadBtn = document.createElement('button');
+            downloadBtn.classList.add('gallery-download-button');
+            downloadBtn.innerText = 'Download';
+            downloadBtn.addEventListener('click',downloadBtnHandler);
+            imgContainer.appendChild(downloadBtn);
+            imgContainer.appendChild(deleteBtn);
+            body.appendChild(imgContainer);
+
+
+
+        }
+        cursor.continue();
     }
 
 }
